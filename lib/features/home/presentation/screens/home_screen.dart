@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+
 import 'package:groceries_app_ui/constants/app_colors.dart';
 import 'package:groceries_app_ui/features/home/presentation/models/product_model.dart';
 import 'package:groceries_app_ui/features/home/presentation/widgets/category_card.dart';
 import 'package:groceries_app_ui/features/home/presentation/widgets/home_bottom_nav.dart';
 import 'package:groceries_app_ui/features/home/presentation/widgets/location_header.dart';
 import 'package:groceries_app_ui/features/home/presentation/widgets/product_card.dart';
-import 'package:groceries_app_ui/features/home/presentation/widgets/promo_banner.dart';
 import 'package:groceries_app_ui/features/home/presentation/widgets/search_bar.dart';
 import 'package:groceries_app_ui/features/home/presentation/widgets/section_header.dart';
+import 'package:groceries_app_ui/features/home/presentation/widgets/carousel_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -68,7 +69,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(
@@ -78,8 +78,6 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
-              // Carrot Logo
               Center(
                 child: Image.asset(
                   'assets/images/carrot.png',
@@ -89,22 +87,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
               const SizedBox(height: 15),
 
-              // Location
               const LocationWidget(),
 
               const SizedBox(height: 20),
 
-              // Search
               const SearchBarWidget(),
 
               const SizedBox(height: 20),
 
-              // Banner
-              const OfferBanner(),
+              const CustomCarouselSlider(),
 
               const SizedBox(height: 25),
 
-              // Exclusive Offer
               const SectionHeader(
                 title: 'Exclusive Offer',
               ),
@@ -115,13 +109,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 230,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemCount: exclusiveProducts.length,
+                  itemCount: 1000,
                   separatorBuilder: (context, index) {
                     return const SizedBox(width: 12);
                   },
                   itemBuilder: (context, index) {
+                    final product =
+                        exclusiveProducts[index % exclusiveProducts.length];
+
                     return ProductCard(
-                      product: exclusiveProducts[index],
+                      product: product,
                     );
                   },
                 ),
@@ -129,7 +126,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
               const SizedBox(height: 25),
 
-              // Best Selling
               const SectionHeader(
                 title: 'Best Selling',
               ),
@@ -140,13 +136,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 230,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemCount: bestSellingProducts.length,
+                  itemCount: 1000,
                   separatorBuilder: (context, index) {
                     return const SizedBox(width: 12);
                   },
                   itemBuilder: (context, index) {
+                    final product =
+                        bestSellingProducts[index % bestSellingProducts.length];
+
                     return ProductCard(
-                      product: bestSellingProducts[index],
+                      product: product,
                     );
                   },
                 ),
@@ -154,7 +153,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
               const SizedBox(height: 25),
 
-              // Groceries
               const SectionHeader(
                 title: 'Groceries',
               ),
@@ -166,15 +164,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: const [
-
                     GroceryCategoryCard(
                       title: 'Pulses',
                       image: 'assets/images/pulses.png',
                       color: AppColors.categoryOrange,
                     ),
-
                     SizedBox(width: 12),
-
                     GroceryCategoryCard(
                       title: 'Rice',
                       image: 'assets/images/rice.png',
@@ -186,18 +181,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
               const SizedBox(height: 20),
 
-              // Grocery Products
               SizedBox(
                 height: 230,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemCount: groceryProducts.length,
+                  itemCount: 1000,
                   separatorBuilder: (context, index) {
                     return const SizedBox(width: 12);
                   },
                   itemBuilder: (context, index) {
+                    final product =
+                        groceryProducts[index % groceryProducts.length];
+
                     return ProductCard(
-                      product: groceryProducts[index],
+                      product: product,
                     );
                   },
                 ),
@@ -208,7 +205,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-
       bottomNavigationBar: BottomNavBar(
         currentIndex: currentIndex,
         onTap: (index) {
