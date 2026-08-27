@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:groceries_app_ui/constants/app_colors.dart';
 import 'package:groceries_app_ui/features/home/presentation/models/product_model.dart';
+import 'package:groceries_app_ui/features/home/presentation/screens/account.dart';
 import 'package:groceries_app_ui/features/home/presentation/widgets/category_card.dart';
 import 'package:groceries_app_ui/features/home/presentation/widgets/home_bottom_nav.dart';
 import 'package:groceries_app_ui/features/home/presentation/widgets/location_header.dart';
@@ -69,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(
@@ -169,7 +171,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       image: 'assets/images/pulses.png',
                       color: AppColors.categoryOrange,
                     ),
+
                     SizedBox(width: 12),
+
                     GroceryCategoryCard(
                       title: 'Rice',
                       image: 'assets/images/rice.png',
@@ -205,12 +209,23 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+
       bottomNavigationBar: BottomNavBar(
         currentIndex: currentIndex,
+
         onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
+          if (index == 4) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const AccountScreen(),
+              ),
+            );
+          } else {
+            setState(() {
+              currentIndex = index;
+            });
+          }
         },
       ),
     );

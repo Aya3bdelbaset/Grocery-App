@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:groceries_app_ui/features/authentication/presentation/screens/sign_screen.dart';
+import 'package:groceries_app_ui/features/authentication/presentation/widgets/auth_background.dart';
+import 'package:groceries_app_ui/features/authentication/presentation/widgets/auth_button.dart';
+import 'package:groceries_app_ui/features/authentication/presentation/widgets/auth_text_field.dart';
 import '../../../core/utils/validators.dart';
-import '../widgets/auth_background.dart';
-import '../widgets/auth_button.dart';
-import '../widgets/auth_text_field.dart';
-import 'sign_screen.dart';
 import '../../../home/presentation/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {

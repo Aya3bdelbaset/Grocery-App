@@ -53,6 +53,8 @@ class BottomNavBar extends StatelessWidget {
           icon: Icon(Icons.person_outline),
           activeIcon: Icon(Icons.person),
           label: 'Account',
+          
+          
         ),
       ],
     );
