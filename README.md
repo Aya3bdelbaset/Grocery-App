@@ -2,23 +2,32 @@
 
 ## 📱 UI Preview
 
-### Login Screen
-![Login Screen](assets/images/login.png)
+<table>
+  <tr>
+    <td><img src="assets\screenshots\splash.png" width="180"></td>
+    <td><img src="assets\screenshots\onboarding.png" width="180"></td>
+    <td><img src="assets\screenshots\login.png" width="180"></td>
+    <td><img src="assets\screenshots\signup.png" width="180"></td>
+    <td><img src="assets\screenshots\flutter_05.png" width="180"></td>
+  </tr>
 
-### Sign Up Screen
-![Sign Up Screen](assets/images/signup.png)
+  <tr>
+    <td><img src="assets\screenshots\flutter_06.png" width="180"></td>
+    <td><img src="assets\screenshots\flutter_07.png" width="180"></td>
+    <td><img src="assets\screenshots\flutter_08.png" width="180"></td>
+    <td><img src="assets\screenshots\flutter_09.png" width="180"></td>
+    <td><img src="assets\screenshots\flutter_10.png" width="180"></td>
+  </tr>
 
+  <tr>
+    <td><img src="assets\screenshots\flutter_11.png" width="180"></td>
+    <td><img src="assets\screenshots\flutter_12.png" width="180"></td>
+    <td><img src="assets\screenshots\flutter_13.png" width="180"></td>
+    <td><img src="assets\screenshots\flutter_14.png" width="180"></td>
+    <td><img src="assets\screenshots\flutter_15.png" width="180"></td>
+  </tr>
 
-### Home Screen
-![Home Screen](assets/images/home.png)
-![Home Screen](assets/images/home2.png)
-
-###  Update Home Screen  Horizontal scrolling  and Scrolled banner
-
-![ Update Home Screen  Horizontal scrolling  and Scrolled banner](assets/images/flutter_01.png)
-![ Update Home Screen  Horizontal scrolling  and Scrolled banner](assets/images/flutter_02.png)
-
-###  Add Product & Account Screen 
-
-![  Add Product & Account Screen ](assets/images/flutter_04.png)
-![  Add Product & Account Screen ](assets/images/flutter_03.png)
+  <tr>
+    <td><img src="assets\screenshots\flutter_17.png" width="180"></td>
+  </tr>
+</table>

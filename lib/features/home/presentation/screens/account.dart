@@ -175,18 +175,7 @@ class _AccountScreenState extends State<AccountScreen> {
       ),
 
       
-      bottomNavigationBar: BottomNavBar(
-        currentIndex: currentIndex,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-
-          if (index == 0) {
-            Navigator.pop(context);
-          }
-        },
-      ),
+  
     );
   }
 
