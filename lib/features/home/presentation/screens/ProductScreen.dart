@@ -27,11 +27,10 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      // App Bar
+      
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios,
@@ -42,7 +41,6 @@ class _ProductScreenState extends State<ProductScreen> {
             Navigator.pop(context);
           },
         ),
-
         actions: [
           IconButton(
             onPressed: () {},
@@ -58,20 +56,37 @@ class _ProductScreenState extends State<ProductScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            // Product Image + Smooth Dots
+           
             Container(
               height: 290,
               width: double.infinity,
-              color: const Color(0xffF5F5F5),
+              color: const Color.fromARGB(255, 255, 254, 254),
+
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: 240,
+                    height: 225,
                     child: Image.asset(
                       'assets/images/applee.png',
                       fit: BoxFit.contain,
+                    ),
+                  ),
+
+                  
+                  Container(
+                    width: 130,
+                    height: 10,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.25),
+                          blurRadius: 15,
+                          spreadRadius: 3,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
                     ),
                   ),
 
@@ -91,14 +106,13 @@ class _ProductScreenState extends State<ProductScreen> {
               ),
             ),
 
-            // Product Information
+            
             Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
-                  // Name + Favorite
+                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -111,7 +125,6 @@ class _ProductScreenState extends State<ProductScreen> {
                           ),
                         ),
                       ),
-
                       IconButton(
                         onPressed: () {},
                         icon: const Icon(
@@ -122,7 +135,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     ],
                   ),
 
-                  // Weight
+                 
                   Text(
                     widget.weight,
                     style: const TextStyle(
@@ -133,7 +146,7 @@ class _ProductScreenState extends State<ProductScreen> {
 
                   const SizedBox(height: 20),
 
-                  // Quantity + Price
+                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -147,9 +160,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                 });
                               }
                             },
-                            icon: const Icon(
-                              Icons.remove,
-                            ),
+                            icon: const Icon(Icons.remove),
                           ),
 
                           Container(
@@ -163,9 +174,7 @@ class _ProductScreenState extends State<ProductScreen> {
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Text(
-                              quantity.toString(),
-                            ),
+                            child: Text(quantity.toString()),
                           ),
 
                           IconButton(
@@ -194,10 +203,9 @@ class _ProductScreenState extends State<ProductScreen> {
 
                   const Divider(height: 30),
 
-                  // Product Detail
+                  
                   ExpansionTile(
                     tilePadding: EdgeInsets.zero,
-
                     title: const Text(
                       "Product Detail",
                       style: TextStyle(
@@ -205,17 +213,13 @@ class _ProductScreenState extends State<ProductScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-
                     trailing: const Icon(
                       Icons.keyboard_arrow_down,
                       color: Colors.black,
                     ),
-
                     children: const [
                       Padding(
-                        padding: EdgeInsets.only(
-                          bottom: 15,
-                        ),
+                        padding: EdgeInsets.only(bottom: 15),
                         child: Text(
                           "Apples Are Nutritious. Apples May Be Good For Weight Loss. "
                           "Apples May Be Good For Your Heart. As Part Of A Healthy "
@@ -232,26 +236,17 @@ class _ProductScreenState extends State<ProductScreen> {
 
                   const Divider(height: 1),
 
-                  // Nutritions
+                  
                   ExpansionTile(
                     tilePadding: EdgeInsets.zero,
-
                     title: const Text(
                       "Nutritions",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: TextStyle(fontWeight: FontWeight.w600),
                     ),
-
-                    trailing: const Icon(
-                      Icons.chevron_right,
-                    ),
-
+                    trailing: const Icon(Icons.chevron_right),
                     children: const [
                       Padding(
-                        padding: EdgeInsets.only(
-                          bottom: 15,
-                        ),
+                        padding: EdgeInsets.only(bottom: 15),
                         child: Text(
                           "Calories: 52 kcal\n"
                           "Carbohydrates: 14g\n"
@@ -268,61 +263,30 @@ class _ProductScreenState extends State<ProductScreen> {
 
                   const Divider(height: 1),
 
-                  // Review
+                  
                   ExpansionTile(
                     tilePadding: EdgeInsets.zero,
-
                     title: const Text(
                       "Review",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: TextStyle(fontWeight: FontWeight.w600),
                     ),
-
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: const [
-                        Icon(
-                          Icons.star,
-                          color: Colors.red,
-                          size: 18,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Colors.red,
-                          size: 18,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Colors.red,
-                          size: 18,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Colors.red,
-                          size: 18,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Colors.red,
-                          size: 18,
-                        ),
-                        Icon(
-                          Icons.chevron_right,
-                        ),
+                        Icon(Icons.star, color: Colors.red, size: 18),
+                        Icon(Icons.star, color: Colors.red, size: 18),
+                        Icon(Icons.star, color: Colors.red, size: 18),
+                        Icon(Icons.star, color: Colors.red, size: 18),
+                        Icon(Icons.star, color: Colors.red, size: 18),
+                        Icon(Icons.chevron_right),
                       ],
                     ),
-
                     children: const [
                       Padding(
-                        padding: EdgeInsets.only(
-                          bottom: 15,
-                        ),
+                        padding: EdgeInsets.only(bottom: 15),
                         child: Text(
                           "Very fresh and delicious!",
-                          style: TextStyle(
-                            color: Colors.grey,
-                          ),
+                          style: TextStyle(color: Colors.grey),
                         ),
                       ),
                     ],
@@ -330,7 +294,7 @@ class _ProductScreenState extends State<ProductScreen> {
 
                   const SizedBox(height: 20),
 
-                  // Add To Basket
+                  
                   SizedBox(
                     width: double.infinity,
                     height: 55,

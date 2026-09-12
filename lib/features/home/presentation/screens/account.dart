@@ -20,7 +20,7 @@ class _AccountScreenState extends State<AccountScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Profile
+           
             Padding(
               padding: const EdgeInsets.fromLTRB(25, 20, 25, 20),
               child: Row(
@@ -80,7 +80,7 @@ class _AccountScreenState extends State<AccountScreen> {
           endIndent: 25,
             ),
 
-            // Account options
+            
             Expanded(
               child: ListView(
                 children: [
@@ -126,14 +126,14 @@ class _AccountScreenState extends State<AccountScreen> {
 
                   const SizedBox(height: 30),
 
-                  // Logout
+                  
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: SizedBox(
                       height: 55,
                       child: ElevatedButton(
                         onPressed: () {
-                          // Logout
+                         
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.grey.shade100,
@@ -174,7 +174,7 @@ class _AccountScreenState extends State<AccountScreen> {
         ),
       ),
 
-      // Bottom Navigation
+      
       bottomNavigationBar: BottomNavBar(
         currentIndex: currentIndex,
         onTap: (index) {
@@ -221,7 +221,7 @@ class _AccountScreenState extends State<AccountScreen> {
           ),
 
           onTap: () {
-            // Navigate to the selected screen
+            
           },
         ),
 
